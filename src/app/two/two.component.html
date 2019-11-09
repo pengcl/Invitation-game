@@ -1,0 +1,47 @@
+<!--<div class="list">
+  <div *ngFor="let item of items" class="box" cdkDropList [cdkDropListData]="[item]" (cdkDropListDropped)="drop($event)">
+    <img id="{{item}}" style="display: block;width: 1.25rem;height: 1.675rem;" cdkDrag src="/assets/puzzle/{{item}}.png">
+  </div>
+</div>-->
+<div class="list">
+  <div
+    cdkDropList
+    #oneList="cdkDropList"
+    [cdkDropListData]="[items[0]]"
+    [cdkDropListConnectedTo]="[oneList,twoList,threeList,fourList]"
+    class="box"
+    (cdkDropListExited)="enter($event)"
+    (cdkDropListDropped)="drop($event)">
+    <img src="/assets/puzzle/{{items[0]}}.png" cdkDrag>
+  </div>
+  <div
+    cdkDropList
+    #twoList="cdkDropList"
+    [cdkDropListData]="[items[1]]"
+    [cdkDropListConnectedTo]="[oneList,twoList,threeList,fourList]"
+    class="box"
+    (cdkDropListExited)="enter($event)"
+    (cdkDropListDropped)="drop($event)">
+    <img src="/assets/puzzle/{{items[1]}}.png" cdkDrag>
+  </div>
+  <div
+    cdkDropList
+    #threeList="cdkDropList"
+    [cdkDropListData]="[items[2]]"
+    [cdkDropListConnectedTo]="[oneList,twoList,threeList,fourList]"
+    class="box"
+    (cdkDropListExited)="enter($event)"
+    (cdkDropListDropped)="drop($event)">
+    <img src="/assets/puzzle/{{items[2]}}.png" cdkDrag>
+  </div>
+  <div
+    cdkDropList
+    #fourList="cdkDropList"
+    [cdkDropListData]="[items[3]]"
+    [cdkDropListConnectedTo]="[oneList,twoList,threeList,fourList]"
+    class="box"
+    (cdkDropListExited)="enter($event)"
+    (cdkDropListDropped)="drop($event)">
+    <img src="/assets/puzzle/{{items[3]}}.png" cdkDrag>
+  </div>
+</div>
